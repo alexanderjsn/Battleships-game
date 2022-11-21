@@ -3,6 +3,15 @@ import random
 player_board = []
 computer_board = []
 
+name = input("""Hello! Welcome to beginners Battlehips!
+Board Size = 5 (counted 0-4 from both sides).
+Number of ships: = 1. 
+Place your ship and compete with the computer. You have 10 turns 
+until the game ends. Good luck! 
+Please enter your chosen username so start the game: 
+""")
+    
+
 for _ in range(5):
     player_board.append(["O"] * 5)
     computer_board.append(["O"] * 5)
@@ -13,7 +22,7 @@ def print_board(player_board):
         print((" ". join(row)))
 
 
-print("User board")
+print(f"{name}'s board")
 print_board(player_board)
 
 print(" ")
@@ -40,9 +49,12 @@ for ships in range(1):
 
 def guess_computer_ship(computer_board):
     for guess in range(10):
-        row_guess = int(input("Guess a row: "))
-        col_guess = int(input("Guess a column: "))
-        computer_board[row_guess][col_guess] = "X"
+        try:
+            row_guess = int(input("Guess a row: "))
+            col_guess = int(input("Guess a column: "))
+            computer_board[row_guess][col_guess] = "X"
+        except ValueError:
+            print("Only numbers beteween 0-4!")
         comp_row_guess = random.randint(1, 4)
         comp_col_guess = random.randint(1, 4)
         player_board[comp_row_guess][comp_col_guess] = "X"
