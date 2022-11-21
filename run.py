@@ -19,3 +19,6 @@ def player_ship(player_board):
     player_col = int(input("Enter a column to place ship (0-4): "))
     player_board[player_row][player_col] = "@"
     print_board(player_board)
+
+
+player_ship(player_board)
