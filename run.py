@@ -33,38 +33,49 @@ def print_comp_board(computer_board):
         print((" ". join(row)))
 
 
-print("Computer board")
+print("Computers board")
 print_comp_board(computer_board)
 
 for ships in range(1):
     try:
         player_row = int(input("Enter a row to place ship (0-4): "))
         player_col = int(input("Enter a column to place ship (0-4): "))
+        comp_row = random.randint(1, 4)
+        comp_col = random.randint(1, 4)
     except ValueError:
-        print("Only numbers beteween 0-4!")
-        continue
+        print("Only a number between 0-4 allowed!")
+        player_row = int(input("Enter a row to place ship (0-4): "))
+        player_col = int(input("Enter a column to place ship (0-4): "))
+
+
+def populate_board(player_board):
     player_board[player_row][player_col] = "@"
     print_board(player_board)
-    comp_row = random.randint(1, 4)
-    comp_col = random.randint(1, 4)
     print(" ")
     print_comp_board(computer_board)
 
 
-def guess_computer_ship(computer_board, player_board):
+populate_board(player_board)
+
+
+def play_game(computer_board, player_board):
     for guess in range(10):
         try:
             row_guess = int(input("Guess a row: "))
             col_guess = int(input("Guess a column: "))
+            computer_board[row_guess][col_guess] = "X"
         except ValueError:
             print("Only numbers beteween 0-4!")
+        except IndexError:
+            print("That's way off the grid!")
             continue
-        computer_board[row_guess][col_guess] = "X"
         comp_row_guess = random.randint(1, 4)
         comp_col_guess = random.randint(1, 4)
         player_board[comp_row_guess][comp_col_guess] = "X"
+        print(f"{name}'s board")
         print_board(player_board)       
         print(" ")
+        print("Computers board")
         print_comp_board(computer_board)
         print("Computer guessed row: ", comp_row_guess)
         print("Computer guessed column: ", comp_col_guess)
@@ -80,7 +91,7 @@ def guess_computer_ship(computer_board, player_board):
             break
 
 
-guess_computer_ship(computer_board, player_board)
+play_game(computer_board, player_board)
 
 
 
