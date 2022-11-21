@@ -2,6 +2,7 @@
 
 player_board = []
 computer_board = []
+turns = 0
 
 for _ in range(5):
     player_board.append(["O"] * 5)
@@ -20,7 +21,7 @@ print("_" * 20)
 
 
 def print_comp_board(computer_board):
-    for row in player_board:
+    for row in computer_board:
         print((" ". join(row)))
 
 
@@ -37,13 +38,14 @@ for ships in range(1):
 
 
 def guess_computer_ship(computer_board):
-    for guess in range(1):
+    for guess in range(10):
         row_guess = int(input("Guess a row: "))
         col_guess = int(input("Guess a column: "))
         computer_board[row_guess][col_guess] = "X"
-        print_comp_board(computer_board)
+        print_board(player_board)       
         print("_" * 20)
-        print_board(player_board)
+        print_comp_board(computer_board)
+        print(f"Turns played: " {turns})
 
 
 guess_computer_ship(computer_board)
