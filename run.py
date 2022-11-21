@@ -47,14 +47,15 @@ for ships in range(1):
     print_comp_board(computer_board)
 
 
-def guess_computer_ship(computer_board):
+def guess_computer_ship(computer_board, player_board):
     for guess in range(10):
         try:
             row_guess = int(input("Guess a row: "))
             col_guess = int(input("Guess a column: "))
-            computer_board[row_guess][col_guess] = "X"
         except ValueError:
             print("Only numbers beteween 0-4!")
+            continue
+        computer_board[row_guess][col_guess] = "X"
         comp_row_guess = random.randint(1, 4)
         comp_col_guess = random.randint(1, 4)
         player_board[comp_row_guess][comp_col_guess] = "X"
@@ -65,18 +66,17 @@ def guess_computer_ship(computer_board):
         print("Computer guessed column: ", comp_col_guess)
         if row_guess == comp_row and col_guess == comp_col:
             print("You sunk my battleship. Good job!")
-            reset = input('Type "P" to play again: ').upper
             break
-            if reset == "P":
-                print("test")
+        if player_board[comp_row_guess][comp_col_guess] == "X":
+            print("You've already tried that one!")
         elif computer_board[row_guess][col_guess] == "X":
-            print("You missed!")
+            print("Both missed!")
         elif comp_row_guess == player_row and comp_col_guess == player_col:
             print("I sunk your battleship. Loser!")
             break
 
 
-guess_computer_ship(computer_board)
+guess_computer_ship(computer_board, player_board)
 
 
 
