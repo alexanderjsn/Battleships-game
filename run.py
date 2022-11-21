@@ -43,14 +43,14 @@ def guess_computer_ship(computer_board):
         row_guess = int(input("Guess a row: "))
         col_guess = int(input("Guess a column: "))
         computer_board[row_guess][col_guess] = "X"
+        comp_row_guess = random.randint(1, 4)
+        comp_col_guess = random.randint(1, 4)
+        player_board[comp_row_guess][comp_col_guess] = "X"
         print_board(player_board)       
         print(" ")
         print_comp_board(computer_board)
-        comp_row_guess = random.randint(1, 4)
-        comp_col_guess = random.randint(1, 4)
-        print("Computer guessed column: ", comp_col_guess)
         print("Computer guessed row: ", comp_row_guess)
-        player_board[comp_row_guess][comp_col_guess] = "X"
+        print("Computer guessed column: ", comp_col_guess)
         if row_guess == comp_row and col_guess == comp_col:
             print("You sunk my battleship. Good job!")
             reset = input('Type "P" to play again: ').upper
