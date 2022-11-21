@@ -53,7 +53,10 @@ def guess_computer_ship(computer_board):
         player_board[comp_row_guess][comp_col_guess] = "X"
         if row_guess == comp_row and col_guess == comp_col:
             print("You sunk my battleship. Good job!")
+            reset = input('Type "P" to play again: ')
             break
+            if reset == "P":
+                print("test")
         elif computer_board[row_guess][col_guess] == "X":
             print("You missed!")
         elif comp_row_guess == player_row and comp_col_guess == player_col:
