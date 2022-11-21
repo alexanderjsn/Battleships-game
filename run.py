@@ -37,8 +37,12 @@ print("Computer board")
 print_comp_board(computer_board)
 
 for ships in range(1):
-    player_row = int(input("Enter a row to place ship (0-4): "))
-    player_col = int(input("Enter a column to place ship (0-4): "))
+    try:
+        player_row = int(input("Enter a row to place ship (0-4): "))
+        player_col = int(input("Enter a column to place ship (0-4): "))
+    except ValueError:
+        print("Only numbers beteween 0-4!")
+        continue
     player_board[player_row][player_col] = "@"
     print_board(player_board)
     comp_row = random.randint(1, 4)
@@ -64,11 +68,11 @@ def guess_computer_ship(computer_board, player_board):
         print_comp_board(computer_board)
         print("Computer guessed row: ", comp_row_guess)
         print("Computer guessed column: ", comp_col_guess)
+        if player_board[comp_row_guess][comp_col_guess] == "X":
+            print("You've already tried that one!")
         if row_guess == comp_row and col_guess == comp_col:
             print("You sunk my battleship. Good job!")
             break
-        if player_board[comp_row_guess][comp_col_guess] == "X":
-            print("You've already tried that one!")
         elif computer_board[row_guess][col_guess] == "X":
             print("Both missed!")
         elif comp_row_guess == player_row and comp_col_guess == player_col:
