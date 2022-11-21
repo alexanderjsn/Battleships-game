@@ -44,11 +44,16 @@ def guess_computer_ship(computer_board):
         print_board(player_board)       
         print("_" * 20)
         print_comp_board(computer_board)
+        print("comp guess col", comp_col_guess)
+        print("comp guess row", comp_row_guess)
 
-
-guess_computer_ship(computer_board)
 
 comp_row = random.randint(1, 4)
 comp_col = random.randint(1, 4)
 comp_row_guess = random.randint(1, 4)
 comp_col_guess = random.randint(1, 4)
+
+guess_computer_ship(computer_board)
+
+
+
