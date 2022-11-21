@@ -2,7 +2,6 @@
 
 player_board = []
 computer_board = []
-turns = 0
 
 for _ in range(5):
     player_board.append(["O"] * 5)
@@ -45,10 +44,7 @@ def guess_computer_ship(computer_board):
         print_board(player_board)       
         print("_" * 20)
         print_comp_board(computer_board)
-        turns = + 1
-        print(f"Turns: {turns} / 10")
 
 
 guess_computer_ship(computer_board)
-
 
