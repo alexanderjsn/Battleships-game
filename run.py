@@ -1,4 +1,4 @@
-
+import random
 
 player_board = []
 computer_board = []
