@@ -45,7 +45,8 @@ def guess_computer_ship(computer_board):
         print_board(player_board)       
         print("_" * 20)
         print_comp_board(computer_board)
-        print(f"Turns played: " {turns})
+        turns = + 1
+        print(f"Turns: {turns} / 10")
 
 
 guess_computer_ship(computer_board)
