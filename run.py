@@ -50,6 +50,7 @@ def guess_computer_ship(computer_board):
         print_comp_board(computer_board)
         comp_row_guess = random.randint(1, 4)
         comp_col_guess = random.randint(1, 4)
+        player_board[comp_row_guess][comp_col_guess] = "X"
         print("Computer guessed column: ", comp_col_guess)
         print("Computer guessed row: ", comp_row_guess)
 
