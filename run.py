@@ -1,9 +1,11 @@
 
 
 player_board = []
+computer_board = []
 
 for _ in range(5):
     player_board.append(["O"] * 5)
+    computer_board.append(["O"] * 5)
 
 
 def print_board(player_board):
@@ -11,7 +13,9 @@ def print_board(player_board):
         print((" ". join(row)))
 
 
-print_board(player_board)
+def print_comp_board(computer_board):
+    for row in player_board:
+        print((" ". join(row)))
 
 
 def player_ship(player_board):
@@ -22,3 +26,5 @@ def player_ship(player_board):
 
 
 player_ship(player_board)
+
+guess_row = input("Guess a row: ")
