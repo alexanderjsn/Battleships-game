@@ -13,18 +13,39 @@ def print_board(player_board):
         print((" ". join(row)))
 
 
+print("User board")
+print_board(player_board)
+
+print("_" * 20)
+
+
 def print_comp_board(computer_board):
     for row in player_board:
         print((" ". join(row)))
 
 
-def player_ship(player_board):
+print("Computer board")
+print_comp_board(computer_board)
+
+for ships in range(1):
     player_row = int(input("Enter a row to place ship (0-4): "))
     player_col = int(input("Enter a column to place ship (0-4): "))
     player_board[player_row][player_col] = "@"
     print_board(player_board)
+    print("_" * 20)
+    print_comp_board(computer_board)
 
 
-player_ship(player_board)
+def guess_computer_ship(computer_board):
+    for guess in range(1):
+        row_guess = int(input("Guess a row: "))
+        col_guess = int(input("Guess a column: "))
+        computer_board[row_guess][col_guess] = "X"
+        print_comp_board(computer_board)
+        print("_" * 20)
+        print_board(player_board)
 
-guess_row = input("Guess a row: ")
+
+guess_computer_ship(computer_board)
+
+
