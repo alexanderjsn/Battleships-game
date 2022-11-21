@@ -54,14 +54,11 @@ def guess_computer_ship(computer_board):
         if row_guess == comp_row and col_guess == comp_col:
             print("You sunk my battleship. Good job!")
             break
-        else:
-            if row_guess < 0 or row_guess > 4 or col_guess < 0 or col_guess > 4:
-                print("You're off the grid, need to be a number between 0-4")
-            elif computer_board[row_guess][col_guess] == "X":
-                print("You missed!")
-            elif comp_row_guess == player_row and comp_col_guess == player_col:
-                print("I sunk your battleship. Loser!")
-                break
+        elif computer_board[row_guess][col_guess] == "X":
+            print("You missed!")
+        elif comp_row_guess == player_row and comp_col_guess == player_col:
+            print("I sunk your battleship. Loser!")
+            break
 
 
 guess_computer_ship(computer_board)
