@@ -50,4 +50,5 @@ guess_computer_ship(computer_board)
 
 comp_row = random.randint(1, 4)
 comp_col = random.randint(1, 4)
-
+comp_row_guess = random.randint(1, 4)
+comp_col_guess = random.randint(1, 4)
