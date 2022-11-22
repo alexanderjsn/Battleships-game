@@ -40,30 +40,25 @@ for ships in range(1):
     try:
         player_row = int(input("Enter a row to place ship (0-4): "))
         player_col = int(input("Enter a column to place ship (0-4): "))
-        continue 
+        continue
     except ValueError:
         print("Only numbers beteween 0-4!")
         player_row = int(input("Enter a row to place ship (0-4): "))
         player_col = int(input("Enter a column to place ship (0-4): ")) 
-        continue
+        break
     except IndexError:
         print("That's way off the grid!")
         player_row = int(input("Enter a row to place ship (0-4): "))
         player_col = int(input("Enter a column to place ship (0-4): ")) 
-        continue
-
+        break
+player_board[player_row][player_col] = "@"
+print(f"{name}'s board")
+print_board(player_board)
+print(" ")
+print("Computers board")
+print_comp_board(computer_board)
 comp_row = random.randint(1, 4)
 comp_col = random.randint(1, 4)
-
-
-def populate_board(player_board):
-    player_board[player_row][player_col] = "@"
-    print_board(player_board)
-    print(" ")
-    print_comp_board(computer_board)
-
-
-populate_board(player_board)
 
 
 def play_game(computer_board, player_board):
