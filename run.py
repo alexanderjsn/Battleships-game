@@ -8,7 +8,7 @@ Board Size = 5 (counted 0-4 from both sides).
 Number of ships: = 1. 
 Place your ship and compete with the computer. You have 10 turns 
 until the game ends. Good luck! 
-Please enter your chosen username so start the game: 
+Please enter your chosen username so start the game:\n 
 """)
 
 # creates the players board
@@ -31,6 +31,7 @@ print(" ")
 
 # prints the computers board
 
+
 def print_comp_board(computer_board):
     for row in computer_board:
         print((" ". join(row)))
@@ -43,18 +44,18 @@ print_comp_board(computer_board)
 
 for ships in range(1):
     try:
-        player_row = int(input("Enter a row to place ship (0-4): "))
-        player_col = int(input("Enter a column to place ship (0-4): "))
+        player_row = int(input("Enter a row to place ship (0-4):\n "))
+        player_col = int(input("Enter a column to place ship (0-4):\n "))
         continue
     except ValueError:
         print("Only numbers beteween 0-4!")
-        player_row = int(input("Enter a row to place ship (0-4): "))
-        player_col = int(input("Enter a column to place ship (0-4): ")) 
+        player_row = int(input("Enter a row to place ship (0-4):\n "))
+        player_col = int(input("Enter a column to place ship (0-4):\n ")) 
         break
     except IndexError:
         print("That's way off the grid!")
-        player_row = int(input("Enter a row to place ship (0-4): "))
-        player_col = int(input("Enter a column to place ship (0-4): ")) 
+        player_row = int(input("Enter a row to place ship (0-4):\n "))
+        player_col = int(input("Enter a column to place ship (0-4):\n ")) 
         break
 # prints the symbol "@" at chosen row/column   
 player_board[player_row][player_col] = "@"
@@ -76,8 +77,8 @@ def play_game(computer_board, player_board):
     turns = 0
     for guess in range(10):
         try:
-            row_guess = int(input("Guess a row: "))
-            col_guess = int(input("Guess a column: "))
+            row_guess = int(input("Guess a row:\n "))
+            col_guess = int(input("Guess a column:\n "))
             computer_board[row_guess][col_guess] = "X"
         except ValueError:
             print("Only numbers beteween 0-4!")
