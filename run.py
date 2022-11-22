@@ -67,6 +67,10 @@ print_comp_board(computer_board)
 comp_row = random.randint(0, 4)
 comp_col = random.randint(0, 4)
 
+# function that is the main game mechanics. 
+# Player can guess a row/column and place an X at places location
+# Computers does the opposite at random location.
+
 
 def play_game(computer_board, player_board):
     turns = 0
