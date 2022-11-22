@@ -62,6 +62,7 @@ comp_col = random.randint(1, 4)
 
 
 def play_game(computer_board, player_board):
+    a = 0
     for guess in range(10):
         try:
             row_guess = int(input("Guess a row: "))
@@ -81,6 +82,8 @@ def play_game(computer_board, player_board):
         print(" ")
         print("Computers board")
         print_comp_board(computer_board)
+        a += 1
+        print(f"{a}/10 turns left")
         print("Computer guessed row: ", comp_row_guess)
         print("Computer guessed column: ", comp_col_guess)
         if row_guess == comp_row and col_guess == comp_col:
