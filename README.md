@@ -94,5 +94,6 @@ Click on Deploy
 
  - Code Institute for the deployment terminal
  - Used this video to learn how to input ship placement "@" and player/computer guesses "X" on the board: [How to Code Battleship in Python - Single Player Game](https://www.youtube.com/watch?v=tF1WRCrd_HQ)
+ - Used this video as a guideline on how to create the gameboards [Learn Python with CodeCademy: Battleship!](https://www.youtube.com/watch?v=7Ki_2gr0rsE&t=68)
  - [CS50's Introduction to Programming with Python](https://www.edx.org/course/cs50s-introduction-to-programming-with-python)
 - [Code Institutes " Love Sandwiches Project "](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/58d3e90f9a2043908c62f31e51c15deb/)
