@@ -5,13 +5,15 @@ def main():
     player_board = []
     computer_board = []
 
-    name = input("""Hello! Welcome to beginners Battlehips!
+    name = input(
+        """Hello! Welcome to beginners Battlehips!
     Board Size = 5 (counted 0-4 from both sides).
-    Number of ships: = 1. 
+    Number of ships: = 1.
     Place your ship and compete with the computer. You have 10 turns 
     until the game ends. Good luck! 
     Please enter your chosen username so start the game:\n 
-    """)
+    """
+    )
 
     # creates the players board
 
@@ -21,7 +23,7 @@ def main():
 
     def print_board(player_board):
         for row in player_board:
-            print((" ". join(row)))
+            print((" ".join(row)))
 
     # prints the players username and the players board
 
@@ -33,7 +35,7 @@ def main():
 
     def print_comp_board(computer_board):
         for row in computer_board:
-            print((" ". join(row)))
+            print((" ".join(row)))
 
     print("Computers board")
     print_comp_board(computer_board)
@@ -48,14 +50,14 @@ def main():
         except ValueError:
             print("Only numbers beteween 0-4!")
             player_row = int(input("Enter a row to place ship (0-4):\n "))
-            player_col = int(input("Enter a column to place ship (0-4):\n ")) 
+            player_col = int(input("Enter a column to place ship (0-4):\n "))
             break
         except IndexError:
             print("That's way off the grid!")
             player_row = int(input("Enter a row to place ship (0-4):\n "))
-            player_col = int(input("Enter a column to place ship (0-4):\n ")) 
+            player_col = int(input("Enter a column to place ship (0-4):\n "))
             break
-    # prints the symbol "@" at chosen row/column   
+    # prints the symbol "@" at chosen row/column
     player_board[player_row][player_col] = "@"
     print(f"{name}'s board")
     print_board(player_board)
@@ -66,7 +68,7 @@ def main():
     comp_row = random.randint(0, 4)
     comp_col = random.randint(0, 4)
 
-    # function that is the main game mechanics. 
+    # function that is the main game mechanics.
     # Player can guess a row/column and place an X at places location
     # Computers does the opposite at random location.
 
@@ -87,7 +89,7 @@ def main():
             comp_col_guess = random.randint(1, 4)
             player_board[comp_row_guess][comp_col_guess] = "X"
             print(f"{name}'s board")
-            print_board(player_board)       
+            print_board(player_board)
             print(" ")
             print("Computers board")
             print_comp_board(computer_board)
@@ -113,6 +115,3 @@ def main():
 
 
 main()
-
-
-
